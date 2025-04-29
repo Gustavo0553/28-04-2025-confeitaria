@@ -11,10 +11,10 @@ app.use(express.json());
 app.use(express.static('.')); 
 
 const pool = mysql.createPool({
-    host: '127.0.0.1',
-    user: 'root',
-    password: 'senac@02',
-    database: 'confeitaria'
+    host: 'confeitaria-gustavodeoliveirabrandao5-8575.k.aivencloud.com',
+    user: 'avnadmin',
+    password: 'AVNS_MPGbWjgSNlRVXH29Vec',
+    database: 'defaultdb'
 });
 
 app.post('/api/mysql', async (req, res) => {
@@ -23,7 +23,7 @@ app.post('/api/mysql', async (req, res) => {
         case 'cadastro':
             try {
                 var [rows, fields] = await pool.query(
-                    "insert into `confeitaria`.`tbl_clientes` (`nome`, `login`, `senha`) values (?, ?, ?);",
+                    "insert into `defaultdb`.`tbl_clientes` (`nome`, `login`, `senha`) values (?, ?, ?);",
                     [nome, login, senha]
                 );
                 if (rows.affectedRows > 0) {
@@ -41,7 +41,7 @@ app.post('/api/mysql', async (req, res) => {
         case 'login':
             try {
                 var [rows, fields] = await pool.query(
-                    "select * from `confeitaria`.`tbl_clientes` where `nome` = ? and `login` = ? and `senha` = ?;",
+                    "select * from `defaultdb`.`tbl_clientes` where `nome` = ? and `login` = ? and `senha` = ?;",
                     [nome, login, senha]
                 );
                 if (rows.length == 1) {
