@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-    <style> 
+    <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #F9F1EC;
         }
 
@@ -43,22 +43,23 @@
             color: #b03b6f;
             display: block;
             transition: 0.3s;
+            border-radius: 5px;
         }
 
         .sidebar a:hover {
             background-color: #f8d9e6;
-          color: #6b304b;
+            color: #6b304b;
         }
 
         .close-btn {
-          position: absolute;
-          top: 10px;
-          right: 20px;
-          font-size: 24px;
-          background: none;
-          border: none;
-          color: #b03b6f;
-          cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: #b03b6f;
+            cursor: pointer;
         }
 
         .menu-button {
@@ -78,10 +79,11 @@
             padding: 50px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             text-align: center;
+            border-bottom: 5px solid #b03b6f;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 30px;
             font-weight: bold;
             color: #504136;
         }
@@ -94,31 +96,34 @@
 
         section button {
             padding: 10px 20px;
-            margin: 0 100px;
-            border-radius: 8px;
+            margin: 10px 100px;
+            border-radius: 12px;
             font-size: 16px;
             background-color: #F9F1EC;
             color: #504136;
-            border: none;
+            border: 2px solid #b03b6f;
             cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         section button:hover {
             background-color: #bb658c;
             color: white;
+            transform: scale(1.05);
         }
 
-        section button:active { 
+        section button:active {
             background-color: #6b304b;
         }
+
         section {
             width: 20%;
             margin: 30px auto;
             padding: 30px;
             background-color: white;
             border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
@@ -126,14 +131,61 @@
             margin-left: 30px;
             height: auto;
             width: 80%;
+            border-radius: 10px;
         }
 
         .cards-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             padding: 30px;
-            flex-wrap: wrap; /* caso fique pequeno na tela */
+            flex-wrap: wrap;
+        }
+
+        .texto h3 {
+            font-size: 28px;
+            color: #b03b6f;
+            margin-top: 30px;
+        }
+
+        .texto h4 {
+            font-size: 18px;
+            color: #504136;
+            margin-top: 10px;
+        }
+
+        .menu-header h4 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #b03b6f;
+            margin-top: 10px;
+        }
+
+        .about-us {
+            text-align: center;
+            background-color: #ff69b4;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-us h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-us p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .footer {
+            background-color: #504136;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -143,21 +195,19 @@
         <button class="close-btn" onclick="fecharMenu()"><i class="fa-solid fa-xmark"></i></button>
         <a href="#"><i class="fa-solid fa-cart-shopping"></i> Meu Carrinho</a>
         <a href="#"><i class="fa-solid fa-user"></i> Meu Perfil</a>
-      </div>
+    </div>
     
     <header class="top-header">
         <div class="menu-button" onclick="abrirMenu()">
             <i class="fa-solid fa-bars"></i>
-          </div>
-          <div class="logo"><i class="fa-solid fa-cake-candles"></i> Um Sonho de Açúcar</div>
+        </div>
+        <div class="logo"><i class="fa-solid fa-cake-candles"></i> Um Sonho de Açúcar</div>
     </header>
 
     <div class="menu-header">
+        <h4 class="texto">Número de contato :43 99999-9999</h4>
+    </div>
 
-    </div>
-    <div>
-        <h4 class="texto">Número de contato :43 99999-9999</h6>
-    </div>
     <div><h3 class="texto">Bolos</h3></div>
     <div class="cards-container">
         <section>
@@ -185,6 +235,7 @@
             <button>Comprar</button>
         </section>
     </div>
+
     <div><h3 class="texto">Cupcakes</h3></div>
     <div class="cards-container">
         <section>
@@ -212,11 +263,12 @@
             <button>Comprar</button>
         </section>
     </div>
+
     <div><h3 class="texto">Doces</h3></div>
     <div class="cards-container">
         <section>
             <img src="./DoceDeBichoDePe.png" id="img">
-            <h3 class="texto">Doce de bicho de pé</h3>
+            <h3 class="texto">Doce Bicho de Pé</h3>
             <h1>R$ 74,99</h1>
             <button>Comprar</button>
         </section>
@@ -234,40 +286,51 @@
         </section>
         <section>
             <img src="./DoceDeSupresaDeUva.png" id="img">
-            <h3 class="texto">Doce de supresa de uva</h3>
+            <h3 class="texto">Doce Surpresa de Uva</h3>
             <h1>R$ 74,99</h1>
             <button>Comprar</button>
         </section>
     </div>
-    <div><h3 class="texto">Pascoa</h3></div>
+
+    <div><h3 class="texto">Ovos de Páscoa</h3></div>
     <div class="cards-container">
         <section>
+            <img src="./OvoDeCafé.png" id="img">
+            <h3 class="texto">Ovo de Páscoa Sabor Café</h3>
+            <h1>R$ 74,99</h1>
+            <button>Comprar</button>
+        </section>
+        <section>
             <img src="./OvoRecheado.png" id="img">
-            <h3 class="texto">Ovo de Pascoa recheado</h3>
+            <h3 class="texto">Ovo de Páscoa Morango</h3>
             <h1>R$ 74,99</h1>
             <button>Comprar</button>
         </section>
         <section>
             <img src="./OvoSimples.png" id="img">
-            <h3 class="texto">Ovo de Pascoa simples</h3>
+            <h3 class="texto">Ovo de Páscoa Simples</h3>
             <h1>R$ 74,99</h1>
             <button>Comprar</button>
         </section>
         <section>
             <img src="./ComboDeOvos.png" id="img">
-            <h3 class="texto">Combo de ovos de Pascoa</h3>
-            <h1>R$ 74,99</h1>
-            <button>Comprar</button>
-        </section>
-        <section>
-            <img src="./OvoDeCafé.png" id="img">
-            <h3 class="texto">Ovo de Brigadeiro de Café</h3>
+            <h3 class="texto">Combo Ovos de Páscoa</h3>
             <h1>R$ 74,99</h1>
             <button>Comprar</button>
         </section>
     </div>
 
+    <!-- Sobre nós -->
+    <div class="about-us">
+        <h2>Sobre Nós</h2>
+        <p>Bem-vindo ao "Um Sonho de Açúcar"! Nossa confeitaria oferece uma vasta seleção de bolos, cupcakes e doces preparados com ingredientes frescos e de qualidade. Estamos aqui para adoçar seu dia com muito carinho!</p>
+    </div>
 
-   <script src="./cardapio.js"></script>
+    <!-- Rodapé -->
+    <div class="footer">
+        <p>&copy; 2025 Um Sonho de Açúcar. Todos os direitos reservados.</p>
+    </div>
+
+    <script src="./cardapio.js"></script>
 </body>
 </html>
